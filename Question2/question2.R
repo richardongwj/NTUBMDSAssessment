@@ -67,4 +67,5 @@ legend("right", legend=c("S", "ES", "P", "E"), col=c("black", "red", "blue", "or
 #plot v as f[S]
 plot(t, y[,5], col="purple", type="l", xlab="Substrate (μM)", ylab="rate (μM/min)", main="Product as f(Substrate)", ylim=(c(0, 100)), xlim=(c(-0, 0.7)))
 legend("right", legend=c("v"), col=c("purple"), lty=1)
-
+Vmax <- max(y[,5])
+paste("Vmax is ", Vmax, "uM/min")
