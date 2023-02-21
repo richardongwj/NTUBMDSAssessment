@@ -1,0 +1,17 @@
+Response to question 2 (8.1) as below:
+  Derive 4 equations:
+    (d[E])/dt=-k_1  [E][S]+k_2 [ES]+k_3 [ES]
+    Written in R as: dEdt <- -k1*E*S + k2*ES + k3*ES
+
+    (d[S])/dt=-k_1  [E][S]+k_2 [ES]
+    Written in R as: dSdt <- -k1*E*S + k2*ES
+
+    (d[ES])/dt=-k_1  [E][S]-k_2 [ES]-k_3 [ES]
+    Written in R as: dESdt <- k1*E*S - k2*ES - k3*ES
+
+    (d[P])/dt=-k_3 [ES]
+    Written in R as: dPdt <- k3*ES
+
+Response to question 2 (8.2) in r script "question2.R"
+
+Response to question 2 (8.3) in r script "question2.R", plot generated saved as "dPdS plot.png"
