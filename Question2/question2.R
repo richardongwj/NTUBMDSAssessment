@@ -31,7 +31,7 @@ f <- function(t, y, start_c) {
 
 #total number of steps (y-axis time) and step size (step size = dt), n_steps = total number of steps for calculation
 dt <- 0.001
-n_steps <- 500
+n_steps <- 1000
 
 #start blank array (stored as y)
 y <- matrix(0, nrow = n_steps + 1, ncol = 5)
@@ -58,7 +58,7 @@ for (i in 1:n_steps) {
 }
 
 #Plot values (stored as y, against t (time))
-plot(t, y[,2], type="l", xlab="Time (min)", ylab="Concentration (μM)", main="Enzyme Kinetic Model", ylim=(c(-0.5, 10)), xlim=(c(-0, 0.7)))
+plot(t, y[,2], type="l", xlab="Time (min)", ylab="Concentration (μM)", main="Enzyme Kinetic Model", ylim=(c(-0.5, 10)), xlim=(c(-0, 1.0)))
 lines(t, y[,1], col="orange") #E
 lines(t, y[,3], col="red") #ES
 lines(t, y[,4], col="blue") #P
@@ -66,7 +66,7 @@ legend("right", legend=c("S", "ES", "P", "E"), col=c("black", "red", "blue", "or
 
 #plot v as f[S]
 plot(y[,2], y[,5], col="purple", type="l", xlab="Substrate (μM)", ylab="rate (μM/min)", main="Product as f(Substrate)", ylim=(c(0, 100)), xlim=(c(-0, 10)))
-legend("right", legend=c("v"), col=c("purple"), lty=1)
+legend("topright", legend=c("v"), col=c("purple"), lty=1)
 Vmax <- max(y[,5])
 Vmax_Sindex <- match(Vmax, y[,5])
 Vmax_S <- y[Vmax_Sindex,2]
